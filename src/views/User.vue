@@ -1,7 +1,7 @@
 <template>
 	<div class="user">
 		<header>
-			<i class="fa fa-angle-left"></i>
+			<i class="fa fa-angle-left" @click="goBack"></i>
 			<span class="title">京东登录</span>
 		</header>
 		<form action="#" method="post">
@@ -35,6 +35,9 @@
 				
 		},
 		methods:{
+			goBack() {
+				window.history.length>1?this.$router.go(-1):this.$router.push("/");
+			}
 //			onsubmit=function(){
 //				
 //				if(usernameInput.value=="admin"%&&userpassword.value=="admin"}{
